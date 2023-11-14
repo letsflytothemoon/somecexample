@@ -42,13 +42,13 @@ typedef C::StaticStrat Static;
 template <class T>
 using Ref = C::Ref<T>;
 
-template <class T>
+template <class T = Stack>
 using Var = C::Var<T>;
 
 int main()
 {
     Var<Stack> i = 10;
-    Ref<Stack> ref = i;
+    Ref<Var<Stack>> ref = i;
     
     ref = 27;
     
